@@ -1,0 +1,20 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "1.first I have created all backend parts including api an all after that I have created a frontend part \r 2.make a routes for routing of the application for apis\r 3.config to store mongodb_url \r 4.create models and schemas to store data in database for that I have used =>MongoDB Atlas\r 5. .env file in that I have stored all my id's ex=> mongoDB ID etc.\r 6.All files routes are store in index.js\r 7.Deployment of apis (backend) => Render",
+  "main": "index.js",
+  "scripts": {
+    "server": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^8.0.1",
+    "nodemon": "^3.0.1"
+  }
+}
