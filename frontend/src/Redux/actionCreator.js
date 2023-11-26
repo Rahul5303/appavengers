@@ -3,7 +3,7 @@ import axios from "axios";
 
 
 // for get all data from blogs
-export const getProducts=(params)=>(dispatch)=>{
+export const getBlogs=(params)=>(dispatch)=>{
     dispatch({type:types.GET_DATA_BLOGS_REQUEST});
     return axios.get(`http://localhost:8001/blogs`,params)
     .then((res)=>{
@@ -32,9 +32,9 @@ export const addBlogs=(params)=>(dispatch)=>{
 
 // for edit data blogs
 
-export const editBlogs=(_id)=>(dispatch)=>{
+export const editBlogs=(_id,payload)=>(dispatch)=>{
     dispatch({type:types.UPDATE_DATA_BLOGS_REQUEST});
-    return axios.put(`http://localhost:8001/blogs/${_id}`)
+    return axios.put(`http://localhost:8001/blogs/${_id}`,payload)
     .then((res)=>{
         dispatch({type:types.UPDATE_DATA_BLOGS_SUCCESS,payload:res.data});
     })

@@ -1,8 +1,7 @@
 import * as types from "./actionTypes";
 
 const initialState = {
-  products: [],
-  product:{},
+  blogs: [],
   isLoading: false,
   isError: false,
 };
@@ -19,7 +18,7 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         isLoading: false,
-        products: payload,
+        blogs: payload,
         isError: false,
       };
     case types.GET_DATA_BLOGS_FAILURE:
@@ -27,7 +26,7 @@ export const reducer = (state = initialState, action) => {
         ...state,
         isLoading: false,
         isError: true,
-        products: [],
+        blogs: [],
       };
     case types.ADD_DATA_BLOGS_REQUEST:
       return {
@@ -72,7 +71,6 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         isLoading: false,
-        product: payload,
         isError: false,
       };
     case types.UPDATE_DATA_BLOGS_FAILURE:
@@ -80,7 +78,6 @@ export const reducer = (state = initialState, action) => {
         ...state,
         isLoading: false,
         isError: true,
-        product: {},
       };
     default:
       return state;
