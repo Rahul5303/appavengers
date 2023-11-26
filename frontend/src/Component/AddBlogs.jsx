@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addBlogs } from '../Redux/actionCreator';
+import { addBlogs, getBlogs } from '../Redux/actionCreator';
+import { useNavigate } from 'react-router-dom';
 
-const AddBlogs = ({ onAddComplete }) => {
+const AddBlogs = () => {
   const dispatch = useDispatch();
   const [formData, setFormData] = useState({ title: '', content: '' });
+  const navigate = useNavigate();
 
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -14,6 +16,9 @@ const AddBlogs = ({ onAddComplete }) => {
     dispatch(addBlogs(formData)).then(() => {
       // After adding the blog, trigger the onAddComplete callback
       // onAddComplete();
+      dispatch(getBlogs());
+      navigate("/");
+
     });
   };
 
